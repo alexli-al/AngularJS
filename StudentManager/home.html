@@ -1,0 +1,53 @@
+	<div class="container"  ng-controller="stuCtrl">
+		<h2>Student Manger</h2>
+		<div class="row">
+			 <div class="col-md-8">
+			  	<form class="form-inline" >
+				<div class="form-group">
+					<label class="sr-only" for="stuNo">Student No</label>
+					<label>Search:&nbsp;</label><input type="text" class="form-control" id="stuNo" ng-model="stuNoQuery" placeholder="StuNo Name Class" />
+				</div>
+				</form> 
+			</div>
+			<div class="col-md-4">
+			  	<button class="btn btn-success" ng-click="jumpToUrl('/add')" >New Student</button>
+			</div>
+		</div>
+		
+		<table class="table table-striped" >
+			<thead>
+				<tr>
+					<th>ID</th>
+					<th>StuNo</th>
+					<th>Name</th>
+					<th>Class</th>
+					<th>Operation</th>
+				</tr>
+			</thead>
+			<tbody>
+			<tr ng-repeat="stu in stus | filter : stuNoQuery">
+				<td>{{stu.id}}</td>
+				<td>{{stu.stuNo}}</td>
+				<td>{{stu.name}}</td>
+				<td>{{stu.classLevel}}</td>
+				<td>
+					<buttoon class="btn btn-primary">Edit</buttoon>
+					<buttoon class="btn btn-primary">Delete</buttoon>
+
+				</td>
+			</tr>
+			
+			</tbody>
+		</table>	
+
+		<h3>Class Choosed</h3>
+		<table  class="table table-bordered">
+			<tr><td>1.Math</td></tr>
+			<tr><td>2.Chinese</td></tr>
+			<tr><td>3.Science</td></tr>
+		</table>
+		
+
+
+		
+	</div>
