@@ -10,7 +10,7 @@ stuApp.config(['$routeProvider',
       }).
       when('/add', {
         templateUrl: 'add.html',
-        controller: 'addStuCtrl'
+        controller: 'stuCtrl'
       }).
       otherwise({
         redirectTo: '/home'

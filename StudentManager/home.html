@@ -25,8 +25,8 @@
 				</tr>
 			</thead>
 			<tbody>
-			<tr ng-repeat="stu in stus | filter : stuNoQuery">
-				<td>{{stu.id}}</td>
+			<tr ng-repeat="stu in stuData | filter : stuNoQuery">
+				<td>{{$index + 1}}</td>
 				<td>{{stu.stuNo}}</td>
 				<td>{{stu.name}}</td>
 				<td>{{stu.classLevel}}</td>
