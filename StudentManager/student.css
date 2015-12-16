@@ -8,3 +8,12 @@ h3{
 table.table-bordered{
 	width: 20px;
 }
+
+h2{
+	text-align: center;
+}
+
+#addBtn{
+	float: right;
+	margin-bottom: -33px;
+}

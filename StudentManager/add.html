@@ -1,17 +1,16 @@
 <div class="container" ng-controller="stuCtrl">
-	<h2>Add Student</h2>
-	<form class="form-horizontal" ng-submit="newSave()">
+	<form name="stuForm" class="form-horizontal" ng-submit="newSave(stuForm.$valid)" novalidate>
 		<div class="form-group">
 			<label  class="col-sm-1 control-label">StuNo</label>
 			<div class="col-sm-3">
-				<input type="text" class="form-control" ng-model="newStu.stuNo" id="stuNo" placeholder="student number">
+				<input type="text" class="form-control" ng-model="newStu.stuNo" id="stuNo" placeholder="student number" required>
 			</div>
 		</div>
 
 		<div class="form-group">
 			<label for="name" class="col-sm-1 control-label" >Name</label>
 			<div class="col-sm-3">
-				<input type="text" class="form-control" ng-model="newStu.name" id="name" placeholder="student name">
+				<input type="text" class="form-control" ng-model="newStu.name" id="name" placeholder="student name" ng-minlength="3" ng-maxlength="8" required>
 			</div>	
 		</div>
 		<div class="form-group">
