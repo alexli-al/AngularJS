@@ -1,6 +1,4 @@
-var stuControllers = angular.module('stuControllers', []);
-
-stuControllers.controller("stuCtrl",function($scope,$location){
+stuApp.controller("stuCtrl",function($scope,$location){
 
 	$scope.classLevels = ['Senior','Junior','Sophomore','Freshman'];
 
@@ -15,6 +13,7 @@ stuControllers.controller("stuCtrl",function($scope,$location){
 
 	$scope.newStu = {};
 
+
 	$scope.jumpToUrl = function(path){
 		$location.path(path);
 	}
@@ -22,17 +21,30 @@ stuControllers.controller("stuCtrl",function($scope,$location){
 
 	//add new student 
 	$scope.newSave = function(isValid){
-		// $scope.stuData.push($scope.newStu[0]);
-		// $scope.newStu={};
-		// $location.path("/home");
-
 		 // check to make sure the form is completely valid
 	       	 if (isValid) {
-	          		alert('our form is amazing');
+	       	 	alert('Add student successfully!');
+	          		var stu = {"classLevel":"SuperMan","stuNo":"DM0008","name":"Test Yeah","course":{"chinese":true,"math":false,"science":true,"chemistry":true}};
+		  	//$scope.stuData .push($scope.newStu);
+	          		$location.path("/home");
+	      	 }else{
+	      	 	alert('Fail to add student!');
 	      	 }
 
+	}
+
+	$scope.add = function(){
+		var stu = {"classLevel":"SuperMan","stuNo":"DM0008","name":"Test Yeah","course":{"chinese":true,"math":false,"science":true,"chemistry":true}};
+		$scope.stuData .push(stu);
+	}
+
+	$scope.edit = function(stu){
+
+	}
 
 
+	$scope.delete = function(stu){
+		 $scope.stuData.splice($scope.stuData.indexOf(stu), 1);
 	}
 
 

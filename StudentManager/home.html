@@ -9,7 +9,8 @@
 				</form> 
 			</div>
 			<div class="col-md-4">
-			  	<button class="btn btn-success" ng-click="jumpToUrl('/add')" >New Student</button>
+			  	<button class="btn btn-success"  ng-click="jumpToUrl('/add')" >New Student</button>
+			  	<!-- <button class="btn btn-success"  ng-click="add()" >New Student</button> -->
 			</div>
 		</div>
 		
@@ -25,28 +26,22 @@
 			</thead>
 			<tbody>
 			<tr ng-repeat="stu in stuData | filter : stuNoQuery">
-				<td>{{$index + 1}}</td>
+				<td><a href="#/home/{{$index + 1}}">{{$index + 1}}</a></td>
 				<td>{{stu.stuNo}}</td>
 				<td>{{stu.name}}</td>
 				<td>{{stu.classLevel}}</td>
 				<td>
-					<buttoon class="btn btn-primary">Edit</buttoon>
-					<buttoon class="btn btn-primary">Delete</buttoon>
+					<buttoon class="btn btn-primary" ng-click="edit(stu)">Edit</buttoon>
+					<buttoon class="btn btn-primary" ng-click="delete(stu)">Delete</buttoon>
 
 				</td>
 			</tr>
 			
 			</tbody>
 		</table>	
-
-		<h3>Class Choosed</h3>
-		<table  class="table table-bordered">
-			<tr><td>1.Math</td></tr>
-			<tr><td>2.Chinese</td></tr>
-			<tr><td>3.Science</td></tr>
-		</table>
 		
+		<!-- choose class-->
 
-
+		<div ui-view></div>
 		
 	</div>

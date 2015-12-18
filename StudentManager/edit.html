@@ -3,8 +3,10 @@
 		<div class="form-group">
 			<label  class="col-sm-1 control-label">StuNo</label>
 			<div class="col-sm-3">
-				<input type="text" class="form-control"  name="stuNo" ng-model="newStu.stuNo" id="stuNo" placeholder="student number"  ng-pattern="/^[DM]*\d\d\d$/" required>
+				<input type="text" class="form-control"  name="stuNo" ng-model="stu.stuNo" id="stuNo" placeholder="student number"  ng-pattern="/^[DM]*\d\d\d$/" required>{{stu.stuNo}}
 				 <p ng-show="stuForm.stuNo.$invalid && stuForm.stuNo.$dirty">stuNo need start with DM and 3 characters limited</p>
+				}
+				}
 				
 			</div>
 		</div>
@@ -12,7 +14,7 @@
 		<div class="form-group">
 			<label for="name" class="col-sm-1 control-label" >Name</label>
 			<div class="col-sm-3">
-				<input type="text" class="form-control" name="stuName" ng-model="newStu.name" id="stuName" placeholder="student name" ng-minlength="3" ng-maxlength="8" required>
+				<input type="text" class="form-control" name="stuName" ng-model="stu.name" id="stuName" placeholder="student name" ng-minlength="3" ng-maxlength="8" required>{{stu.name}}
 				<p ng-show="stuForm.stuName.$error.minlength" class="help-block">Username is too short.</p>
       				<p ng-show="stuForm.stuName.$error.maxlength" class="help-block">Username is too long.</p>
 
@@ -47,7 +49,7 @@
 
 		<div class="form-group">
 			<div class="col-sm-3" style="text-align:center;">
-				     <button type="submit" class="btn btn-success" ng-disabled="stuForm.$invalid">Save</button>
+				     <button type="submit" class="btn btn-success" ng-disabled="stuForm.$invalid">Update</button>
 			</div>
 		
 		</div>
