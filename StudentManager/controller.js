@@ -1,4 +1,4 @@
-stuApp.controller("stuCtrl",function($scope,$location){
+stuApp.controller("stuCtrl",function($scope,$state,$translate){
 
 	$scope.classLevels = ['Senior','Junior','Sophomore','Freshman'];
 
@@ -11,41 +11,34 @@ stuApp.controller("stuCtrl",function($scope,$location){
 	
 	];
 
-	$scope.newStu = {};
-
-
-	$scope.jumpToUrl = function(path){
-		$location.path(path);
-	}
-
-
-	//add new student 
-	$scope.newSave = function(isValid){
-		 // check to make sure the form is completely valid
-	       	 if (isValid) {
-	       	 	alert('Add student successfully!');
-	          		var stu = {"classLevel":"SuperMan","stuNo":"DM0008","name":"Test Yeah","course":{"chinese":true,"math":false,"science":true,"chemistry":true}};
-		  	//$scope.stuData .push($scope.newStu);
-	          		$location.path("/home");
-	      	 }else{
-	      	 	alert('Fail to add student!');
-	      	 }
-
-	}
-
-	$scope.add = function(){
-		var stu = {"classLevel":"SuperMan","stuNo":"DM0008","name":"Test Yeah","course":{"chinese":true,"math":false,"science":true,"chemistry":true}};
-		$scope.stuData .push(stu);
-	}
-
-	$scope.edit = function(stu){
-
-	}
-
 
 	$scope.delete = function(stu){
 		 $scope.stuData.splice($scope.stuData.indexOf(stu), 1);
 	}
 
 
+});
+
+
+stuApp.controller('i18nController', function ($scope, $translate) {
+  /* Change languages with the language string */
+  $scope.changeLanguage = function (key) {
+    // $translate.use(key);
+     $translate.use("zh-cn");
+  };
+
+  /* Determine it is English or not */
+  $scope.isEnUs = function () {
+     return $translate.use() == "en-us";
+  }
+
+  /* Determine it is simplified Chinese or not */
+  $scope.isZhCn = function () {
+       return $translate.use() == "zh-cn";
+  }
+
+  /* Determine it is traditional Chinese or not */
+  $scope.isZhHant = function () {
+     return $translate.use() == "zh-hant";
+  }
 });

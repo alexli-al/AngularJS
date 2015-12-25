@@ -9,7 +9,7 @@
 				</form> 
 			</div>
 			<div class="col-md-4">
-			  	<button class="btn btn-success"  ng-click="jumpToUrl('/add')" >New Student</button>
+			  	<button class="btn btn-success" ui-sref="home.add">New Student</button>
 			  	<!-- <button class="btn btn-success"  ng-click="add()" >New Student</button> -->
 			</div>
 		</div>
@@ -18,7 +18,7 @@
 			<thead>
 				<tr>
 					<th>ID</th>
-					<th>StuNo</th>
+					<th>{{ 'StuNo' | translate }}</th>
 					<th>Name</th>
 					<th>Class</th>
 					<th>Operation</th>
@@ -26,13 +26,13 @@
 			</thead>
 			<tbody>
 			<tr ng-repeat="stu in stuData | filter : stuNoQuery">
-				<td><a href="#/home/{{$index + 1}}">{{$index + 1}}</a></td>
+				<td><a ui-sref="home.{{$index + 1}}">{{$index + 1}}</a></td>
 				<td>{{stu.stuNo}}</td>
 				<td>{{stu.name}}</td>
 				<td>{{stu.classLevel}}</td>
 				<td>
-					<buttoon class="btn btn-primary" ng-click="edit(stu)">Edit</buttoon>
-					<buttoon class="btn btn-primary" ng-click="delete(stu)">Delete</buttoon>
+					<button class="btn btn-primary" disabled>Edit</button>
+					<button class="btn btn-primary" ng-click="delete(stu)">Delete</button>
 
 				</td>
 			</tr>
