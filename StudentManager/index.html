@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="zh_CN" ng-app="stuApp">
 <head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" href="../bootstrap-3.3.5/css/bootstrap.css">
 <script src= "../angular-1.4.7/angular.js"></script>
 <script src= "../angular-1.4.7/angular-ui-router.js"></script>
@@ -14,7 +15,10 @@
 </head>
 
 <body>
-	
+	<div ng-controller="i18nController">
+	  <button class="btn" ng-click="changeLanguage('zh-cn')" translate="BUTTON_TEXT_DE"></button>
+	  <button class="btn" ng-click="changeLanguage('en-us')" translate="BUTTON_TEXT_EN"></button>
+	</div>
 	<h2>Student Manager</h2>
 
 	<div ui-view></div>

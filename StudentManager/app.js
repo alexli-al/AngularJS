@@ -114,21 +114,60 @@ var stuApp = angular.module("stuApp",['ui.router','LocalStorageModule','pascalpr
 
         }]
       });
-  },function($translateProvider){
+  }).config(function($translateProvider){
         /* The default language should be English */
    $translateProvider.preferredLanguage('zh-cn');
 
    $translateProvider.translations('zh-cn', {
-    StuNo: '学号',
+    StuNo:'学号',
+	ID:'编号',
+	Name:'姓名',
+	Class:'年级',
+	NewStudent:'添加学生',
+	Operation:'操作',
+	Edit:'修改',
+	Delete:'删除',
+	Search:'查找',
+	SearchInfo:'关键字查找',
+	Course:'课程',
+	Math:'数学',
+	Chinese:'语文',
+	Science:'科学',
+	Chemistry:'化学',
+	Save:'保存',
+	stuNameLong:'姓名至多四个字',
+	stuNameShort:'姓名字至少两个字',
+	stuNoInvalid:'编号以DM开头,共五个字符长度',
     BUTTON_TEXT_EN: '英语',
-    BUTTON_TEXT_DE: '德语'
+    BUTTON_TEXT_DE: '中文'
+
+	
   });
 
     /* Translate into English */
   $translateProvider.translations('en-us', {
-    StuNo: 'stuNo',
-     BUTTON_TEXT_EN: 'english',
-    BUTTON_TEXT_DE: 'german'
+    StuNo:'stuNo',
+	ID:'ID',
+	Name:'Name',
+	Class:'Class',
+	NewStudent:'New Student',
+	Operation:'Operation',
+	Course:'Course',
+	Math:'Math',
+	Chinese:'Chinese',
+	Science:'Science',
+	Chemistry:'Chemistry',
+	Save:'Save',
+	stuNameLong:'stuName too long',
+	stuNameShort:'stuName too short',
+	stuNoInvalid:'stuNo need start with DM and 3 characters limited',
+	Edit:'Edit',
+	Delete:'Delete',
+	Search:'Search',
+	SearchInfo:' key words to search',
+    BUTTON_TEXT_EN: 'english',
+    BUTTON_TEXT_DE: 'chinese'
+
     
   });
 

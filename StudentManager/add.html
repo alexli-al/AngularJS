@@ -2,7 +2,7 @@
 	<h3>Add New Student</h3>
 	<form name="stuForm" class="form-horizontal" ng-submit="newSave(stuForm.$valid)" novalidate>
 		<div class="form-group">
-			<label  class="col-sm-1 control-label">StuNo</label>
+			<label  class="col-sm-1 control-label">{{ 'StuNo' | translate }}</label>
 			<div class="col-sm-3">
 				<input type="text" class="form-control"  name="stuNo" ng-model="newStu.stuNo" id="stuNo" placeholder="student number"  ng-pattern="/^[DM]*\d\d\d$/" required>
 				 <p ng-show="stuForm.stuNo.$invalid && stuForm.stuNo.$dirty">stuNo need start with DM and 3 characters limited</p>
@@ -11,7 +11,7 @@
 		</div>
 
 		<div class="form-group">
-			<label for="name" class="col-sm-1 control-label" >Name</label>
+			<label for="name" class="col-sm-1 control-label" >{{ 'Name' | translate }}</label>
 			<div class="col-sm-3">
 				<input type="text" class="form-control" name="stuName" ng-model="newStu.name" id="stuName" placeholder="student name" ng-minlength="3" ng-maxlength="8" required>
 				<p ng-show="stuForm.stuName.$error.minlength" class="help-block">Username is too short.</p>
@@ -20,26 +20,26 @@
 			</div>	
 		</div>
 		<div class="form-group">
-			<label for="classLevel" class="col-sm-1 control-label" >Class</label>
+			<label for="classLevel" class="col-sm-1 control-label" >{{ 'Class' | translate }}</label>
 			<div class="col-sm-3">
 				<select ng-model="newStu.classLevel" ng-options="opt as opt for opt in classLevels" ng-init="newStu.classLevel='Freshman'"></select>
 			</div>
 		</div>
 
 		<div class="form-group">
-			<label for="course" class="col-sm-1 control-label">Course</label>
+			<label for="course" class="col-sm-1 control-label">{{ 'Course' | translate }}</label>
 			<div class="col-sm-4">
 				<label class="checkbox-inline">
-				  <input type="checkbox" name="math" ng-model="newStu.course.math"> Math
+				  <input type="checkbox" name="math" ng-model="newStu.course.math"> {{ 'Math' | translate }}
 				</label>
 				<label class="checkbox-inline">
-				  <input type="checkbox" name="chinese" ng-model="newStu.course.chinese"> Chinese
+				  <input type="checkbox" name="chinese" ng-model="newStu.course.chinese"> {{ 'Chinese' | translate }}
 				</label>
 				<label class="checkbox-inline">
-				  <input type="checkbox" name="science" ng-model="newStu.course.science"> Science
+				  <input type="checkbox" name="science" ng-model="newStu.course.science"> {{ 'Science' | translate }}
 				</label>
 				<label class="checkbox-inline">
-				  <input type="checkbox" name="chemistry" ng-model="newStu.course.chemistry"> Chemistry
+				  <input type="checkbox" name="chemistry" ng-model="newStu.course.chemistry"> {{ 'Chemistry' | translate }}
 				</label>
 			</div>
 			
@@ -47,7 +47,7 @@
 
 		<div class="form-group">
 			<div class="col-sm-3" style="text-align:center;">
-				     <button type="submit" class="btn btn-success" ng-disabled="stuForm.$invalid">Save</button>
+				     <button type="submit" class="btn btn-success" ng-disabled="stuForm.$invalid">{{ 'Save' | translate }}</button>
 			</div>
 		
 		</div>

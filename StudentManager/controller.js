@@ -1,4 +1,4 @@
-stuApp.controller("stuCtrl",function($scope,$state,$translate){
+stuApp.controller("stuCtrl",function($scope,$state){
 
 	$scope.classLevels = ['Senior','Junior','Sophomore','Freshman'];
 
@@ -24,7 +24,7 @@ stuApp.controller('i18nController', function ($scope, $translate) {
   /* Change languages with the language string */
   $scope.changeLanguage = function (key) {
     // $translate.use(key);
-     $translate.use("zh-cn");
+     $translate.use(key);
   };
 
   /* Determine it is English or not */
